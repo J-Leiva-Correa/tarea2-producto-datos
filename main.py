@@ -6,7 +6,10 @@ import joblib
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse, RedirectResponse
+from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
+from pydantic import ConfigDict  # Pydantic v2
 # --- Carga de artefactos ---
 ARTIFACTS_DIR = Path("model")
 MODEL_PATH = ARTIFACTS_DIR / "wine_nb_pipeline.joblib"
@@ -22,6 +25,8 @@ metadata = json.loads(METADATA_PATH.read_text()) if METADATA_PATH.exists() else 
 
 # --- Esquema de entrada/salida ---
 class WineInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    
     # 13 features con validaciones mínimas:
     alcohol: float = Field(..., gt=0)
     malic_acid: float = Field(..., gt=0)
