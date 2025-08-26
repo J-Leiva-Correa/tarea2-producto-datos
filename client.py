@@ -4,7 +4,7 @@ import json
 from pprint import pprint
 
 # Cambia esta URL a la de Render en el Paso 5
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "https://tarea2-producto-datos.onrender.com"
 PREDICT_URL = f"{BASE_URL}/predict"
 HEALTH_URL = f"{BASE_URL}/health"
 
