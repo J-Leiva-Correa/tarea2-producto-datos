@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ```
 
-# 3. Entrenar/Exportar modelo (opcional)
+## 3. Entrenar/Exportar modelo (opcional)
 
 El repositorio ya incluye los artefactos listos en `./model`.  
 Si deseas regenerarlos:
@@ -28,14 +28,14 @@ Si deseas regenerarlos:
 python train_export.py
 
 ```
-# 4. Ejecutar servidor local
+## 4. Ejecutar servidor local
 
 ```bash
 uvicorn main:app --reload
 
 
 ```
-# 5. API desplegada (Render)
+## 5. API desplegada (Render)
 
 - Base URL → https://tarea2-producto-datos.onrender.com  
 - Health → https://tarea2-producto-datos.onrender.com/health  
@@ -44,7 +44,7 @@ uvicorn main:app --reload
 ⚠️ **Nota (plan Free de Render):**  
 Si no hay tráfico por ~15 minutos, la instancia “duerme” y la primera request puede tardar 30–60 segundos. Luego responde normal.
 
-# 6. Contrato de la API
+## 6. Contrato de la API
 
 **POST** `/predict`  
 
@@ -82,7 +82,7 @@ Si no hay tráfico por ~15 minutos, la instancia “duerme” y la primera reque
 }
 
 ```
-# 7. Ejemplos de error (422)
+## 7. Ejemplos de error (422)
 
 ### Campo faltante (`proline`)
 ```json
