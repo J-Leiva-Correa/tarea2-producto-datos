@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ```
 
-## 3. Entrenar/Exportar modelo (opcional)
+## 3. Entrenar/Exportar modelo 
 
 El repositorio ya incluye los artefactos listos en `./model`.  
 Si deseas regenerarlos:
